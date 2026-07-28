@@ -8,7 +8,14 @@ Current working directory
 Current date and time
 
 Hint: whoami, hostname, pwd, date
+*********
+#!/bin/bash
 
+echo "Username: $(whoami)"
+echo "Hostname: $(hostname)"
+echo "Current Directory: $(pwd)"
+echo "Current Date & Time: $(date)"
+##############################
 Exercise 2: Directory Creator
 
 Write a shell script that asks the user for a directory name.
@@ -17,7 +24,18 @@ If the directory already exists, display an appropriate message.
 Otherwise, create the directory.
 
 Concepts: read, mkdir, if
-
+***************************
+#!/bin/bash
+echo "Enter directory name:"
+read dname
+if [ -d "$dname" ]
+then
+    echo "Directory already exists."
+else
+    mkdir "$dname"
+    echo "Directory created."
+fi
+#################################
 Exercise 3: File Counter
 
 Write a shell script that displays:
@@ -38,7 +56,21 @@ Concepts:
 read
 if
 Logical operators
+**********************
+#!/bin/bash
+echo "Enter three numbers:"
+read a b c
 
+if [ $a gt $b ] && [ $a gt $c ]
+then
+    echo "Largest = $a"
+elif [ $b gt $a ] && [ $b gt $c ]
+then
+    echo "Largest = $b"
+else
+    echo "Largest = $c"
+fi
+##############################
 Exercise 5: Grade Calculator
 
 Accept marks from the user and display
