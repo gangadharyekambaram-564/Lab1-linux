@@ -1,0 +1,318 @@
+Exercise 1: System Information
+
+Write a shell script that displays:
+
+Username
+Hostname
+Current working directory
+Current date and time
+
+Hint: whoami, hostname, pwd, date
+
+Exercise 2: Directory Creator
+
+Write a shell script that asks the user for a directory name.
+
+If the directory already exists, display an appropriate message.
+Otherwise, create the directory.
+
+Concepts: read, mkdir, if
+
+Exercise 3: File Counter
+
+Write a shell script that displays:
+
+Number of files
+Number of directories
+
+present in the current working directory.
+
+Hint: find, wc
+
+Exercise 4: Largest Number
+
+Read three numbers from the user and print the largest.
+
+Concepts:
+
+read
+if
+Logical operators
+
+Exercise 5: Grade Calculator
+
+Accept marks from the user and display
+
+Distinction
+First Class
+Pass
+Fail
+
+using nested if.
+
+Section B: Intermediate
+Exercise 6: Password Strength Checker
+
+Ask the user to enter a password.
+
+Display whether it satisfies:
+
+Minimum 8 characters
+Contains a number
+
+(No need for full validation.)
+
+Exercise 7: File Extension Counter
+
+Ask the user for an extension.
+
+Example:
+
+txt
+
+Display how many files of that type are present.
+
+Example
+
+find . -name "*.txt"
+Exercise 8: Multiplication Table
+
+Read a number and print its multiplication table up to 10.
+
+Example
+
+7 × 1 = 7
+7 × 2 = 14
+...
+Exercise 9: Backup Script
+
+Ask the user for a filename.
+
+If it exists,
+
+create
+
+filename.bak
+
+Otherwise display
+
+File not found
+Exercise 10: Reverse Countdown
+
+Read a number
+
+Example
+
+5
+
+Output
+
+5
+4
+3
+2
+1
+
+using a while loop.
+
+Section C: Command-Line Arguments
+Exercise 11: Calculator
+
+Accept
+
+10 20
+
+from the command line.
+
+Display
+
+Addition
+Subtraction
+Multiplication
+Division
+Exercise 12: Even/Odd
+
+Accept multiple numbers as command-line arguments.
+
+Display
+
+15 → Odd
+20 → Even
+33 → Odd
+Exercise 13: Parameter Analyzer
+
+Accept any number of parameters.
+
+Display
+
+Total parameters
+First parameter
+Last parameter
+
+Example
+
+./script one two three four
+
+Output
+
+Total = 4
+First = one
+Last = four
+Section D: Text Processing
+Exercise 14: Word Search
+
+Read
+
+filename
+keyword
+
+Display
+
+whether the word exists
+number of occurrences
+
+Hint
+
+grep
+wc
+Exercise 15: Line Statistics
+
+Display
+
+Total lines
+Empty lines
+Non-empty lines
+
+for a given file.
+
+Section E: Small Automation Problems
+Exercise 16: Disk Space Checker
+
+Display
+
+Disk usage is Normal
+
+or
+
+Disk Almost Full
+
+based on the available disk space.
+
+Exercise 17: Login Greeting
+
+Display
+
+Good Morning
+
+or
+
+Good Afternoon
+
+or
+
+Good Evening
+
+depending on the current time.
+
+Exercise 18: Rename Files
+
+Rename all .txt files by adding
+
+backup_
+
+Example
+
+notes.txt
+
+↓
+
+backup_notes.txt
+Exercise 19: Find Recently Modified Files
+
+Display all files modified within the last 24 hours.
+
+Exercise 20: Mini Menu Program
+
+Display
+
+1. Show Date
+2. Show Current Directory
+3. Show Username
+4. Exit
+
+Execute the selected option.
+
+Debugging ("Spot It") Questions
+
+Students enjoyed these, so you can continue them.
+
+Spot It – 1
+#!/bin/bash
+
+if[-f file.txt]
+then
+echo "Found"
+fi
+
+Find and correct the mistake.
+
+Spot It – 2
+#!/bin/bash
+
+for i in (1 2 3)
+do
+echo $i
+done
+
+Find and correct the mistake.
+
+Spot It – 3
+#!/bin/bash
+
+read num
+
+if [ $num > 10 ]
+then
+echo "Greater"
+fi
+
+Find and correct the mistake.
+
+Spot It – 4
+#!/bin/bash
+
+count=1
+
+while [ $count <= 5 ]
+do
+echo $count
+count++
+done
+
+Find and correct the mistake.
+
+Spot It – 5
+#!/bin/bash
+
+echo Enter your name
+read$name
+
+echo Hello $name
+
+
+Readings: 
+https://bkeerthanamanipal.blogspot.com/2025/08/passing-values-into-shell-scripts.html
+https://medium.com/@sankad_19852/shell-scripting-exercises-5eb7220c2252
+
+
+Books:
+https://fac.iitg.ac.in/asahu/cs241-2018/A3/Linux.Shell.Scripting.Cookbook.pdf
+
+Blogs: 
+geekstuff
+tecmint
+
+Find and correct the mistake.
+
+“The only way to learn a new programming language is by writing programs in it.”
+                                                                                      — Dennis Ritchie
