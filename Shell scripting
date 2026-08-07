@@ -107,6 +107,19 @@ Display how many files of that type are present.
 Example
 
 find . -name "*.txt"
+
+############################
+#!/bin/bash
+echo "Number of txt files:"
+find . -maxdepth 1 -type f -name "*.txt" | wc -l
+echo "Number of c files:"
+find . -maxdepth 1 -type f -name "*.c" | wc -l
+echo "Number of bash files:"
+find . -maxdepth 1 -type f -name "*.sh" | wc -l
+echo "Number of pdf files:"
+find . -maxdepth 1 -type f -name "*.pdf" | wc -l
+####################################
+
 Exercise 8: Multiplication Table
 
 Read a number and print its multiplication table up to 10.
@@ -116,6 +129,14 @@ Example
 7 × 1 = 7
 7 × 2 = 14
 ...
+*************************************
+#!/bin/bash
+read -p "Enter number: " num
+for (( i=1; i<=10; i++ ))
+do
+    echo "$num x $i = $((num * i))"
+done
+***********************************
 Exercise 9: Backup Script
 
 Ask the user for a filename.
@@ -129,6 +150,17 @@ filename.bak
 Otherwise display
 
 File not found
+*******************************
+#!/bin/bash
+read -p "Enter filename: " file_name
+if [ -f "$file_name" ]
+then
+    cp "$file_name" "$file_name.bak"
+    echo "Backup created successfully."
+else
+    echo "File not found."
+fi
+#################################
 Exercise 10: Reverse Countdown
 
 Read a number
@@ -146,6 +178,15 @@ Output
 1
 
 using a while loop.
+******************************
+#!/bin/bash
+read -p "Enter number: " numb
+while [ $numb -ge 1 ]
+do
+    echo $numb
+    numb=$((numb - 1))
+done
+#############################
 
 Section C: Command-Line Arguments
 Exercise 11: Calculator
@@ -287,7 +328,13 @@ echo "Found"
 fi
 
 Find and correct the mistake.
-
+*********************************
+#!/bin/bash
+if [ -f file.txt ]
+then
+    echo "Found"
+fi
+#################################
 Spot It – 2
 #!/bin/bash
 
@@ -297,7 +344,13 @@ echo $i
 done
 
 Find and correct the mistake.
-
+*******************************
+#!/bin/bash
+for i in 1 2 3
+do
+    echo $i
+done
+###################################
 Spot It – 3
 #!/bin/bash
 
@@ -309,7 +362,13 @@ echo "Greater"
 fi
 
 Find and correct the mistake.
-
+*******************************
+#!/bin/bash
+if [ $num -gt 10 ]
+then
+echo "Greater"
+fi
+###############################
 Spot It – 4
 #!/bin/bash
 
@@ -322,15 +381,29 @@ count++
 done
 
 Find and correct the mistake.
+********************************
+#!/bin/bash
+count=1
+while [ $count -le 5 ]
+do
+    echo $count
+    count=$((count + 1))
+done
+#################################
 
 Spot It – 5
 #!/bin/bash
 
 echo Enter your name
 read$name
-
 echo Hello $name
-
+Find and correct the mistake.
+*********************************
+#!/bin/bash
+echo 'Enter your'  name
+read name
+echo Hello $name
+#################################
 
 Readings: 
 https://bkeerthanamanipal.blogspot.com/2025/08/passing-values-into-shell-scripts.html
@@ -344,7 +417,6 @@ Blogs:
 geekstuff
 tecmint
 
-Find and correct the mistake.
 
 “The only way to learn a new programming language is by writing programs in it.”
                                                                                       — Dennis Ritchie
